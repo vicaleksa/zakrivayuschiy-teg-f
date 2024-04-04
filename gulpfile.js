@@ -12,10 +12,24 @@ const gulpPug = require('gulp-pug');
 const sass = require('gulp-sass')(require('sass'));
 
 function pug() {
+  const options = {
+    removeComments: true,
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    sortClassName: true,
+    useShortDoctype: true,
+    collapseWhitespace: true,
+    minifyCSS: true,
+    keepClosingSlash: true
+  };
   return gulp.src('src/pages/**/*.pug')
-    .pipe(gulpPug({
-      pretty: true
-    }))
+    .pipe(gulpPug())
+    .pipe(plumber())
+    .on('data', function (file) {
+      const buferFile = Buffer.from(htmlMinify.minify(file.contents.toString(), options))
+      return file.contents = buferFile
+    })
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({ stream: true }));
 }
@@ -53,42 +67,6 @@ function pagesScss() {
     .pipe(browserSync.reload({ stream: true }));
 }
 
-function html() {
-  const options = {
-    removeComments: true,
-    removeRedundantAttributes: true,
-    removeScriptTypeAttributes: true,
-    removeStyleLinkTypeAttributes: true,
-    sortClassName: true,
-    useShortDoctype: true,
-    collapseWhitespace: true,
-    minifyCSS: true,
-    keepClosingSlash: true
-  };
-  return gulp.src('src/**/*.html')
-    .pipe(plumber())
-    .on('data', function (file) {
-      const buferFile = Buffer.from(htmlMinify.minify(file.contents.toString(), options))
-      return file.contents = buferFile
-    })
-    .pipe(gulp.dest('dist/'))
-    .pipe(browserSync.reload({ stream: true }));
-}
-
-function css() {
-  const plugins = [
-    autoprefixer(),
-    mediaquery(),
-    cssnano()
-  ];
-  return gulp.src('src/**/*.css')
-    .pipe(plumber())
-    .pipe(concat('bundle.css'))
-    .pipe(postcss(plugins))
-    .pipe(gulp.dest('dist/'))
-    .pipe(browserSync.reload({ stream: true }));
-}
-
 function images() {
   return gulp.src('src/images/**/*.{jpg,png,svg,gif,ico,webp,avif}')
     .pipe(gulp.dest('dist/images'))
@@ -102,9 +80,7 @@ function clean() {
 function watchFiles() {
   gulp.watch(['src/pages/**/*.pug'], pug);
   gulp.watch(['src/scripts/**/*.js'], scripts);
-  gulp.watch(['src/**/*.html'], html);
-  gulp.watch(['src/**/*.css'], css);
-  gulp.watch(['src/layouts/**/*.scss'], layoutsScss);
+  gulp.watch(['src/layouts/**/*.scss', 'src/styles/**/*.scss'], layoutsScss);
   gulp.watch(['src/pages/**/*.scss'], pagesScss);
   gulp.watch(['src/images/**/*.{jpg,png,svg,gif,ico,webp,avif}'], images);
 }
@@ -124,8 +100,6 @@ exports.pug = pug;
 exports.scripts = scripts;
 exports.layoutsScss = layoutsScss;
 exports.pagesScss = pagesScss;
-exports.html = html;
-exports.css = css;
 exports.images = images;
 exports.clean = clean;
 
