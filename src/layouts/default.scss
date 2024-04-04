@@ -1,0 +1,15 @@
+@import '../fonts/fonts.css';
+@import '../globals/variables';
+@import '../globals/themes';
+@import '../globals/globals';
+@import '../globals/animations.css';
+
+.page {
+    min-inline-size: 320px;
+    min-block-size: 100dvb;
+    font-family: var(--main-font), sans-serif;
+    font-variation-settings: 'wght' var(--main-font-weight);
+    background-image: var(--background-image);
+    background-attachment: fixed;
+    background-size: cover;
+  }
