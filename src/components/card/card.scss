@@ -1,0 +1,11 @@
+.card {
+    background-color: var(--background-color);
+    color: var(--main-color);
+    h3 {
+        color: var(--main-color);
+        font-size: 18px;
+    }
+    img {
+        inline-size: 100%;
+    }
+}
