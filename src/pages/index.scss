@@ -18,8 +18,10 @@
 
 
 .header {
+    width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
     background-color: var(--background-color);
     display: flex;
+    margin: auto;
     flex-direction: column;
     align-items: center;
     color: var(--main-color);
@@ -61,6 +63,8 @@
 }
 
 .card-section {
+    width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+    margin: auto;
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
@@ -68,7 +72,6 @@
 }
 
 .footer {
-    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,5 +94,11 @@
         width: 29px;
         height: 28px;
         color: var(--main-color);
+    }
+}
+
+@media (width > 375px) {
+    .footer__save-button {
+        flex-direction: row;
     }
 }
