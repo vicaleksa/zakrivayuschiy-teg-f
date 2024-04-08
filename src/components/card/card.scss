@@ -1,11 +1,46 @@
 .card {
     background-color: var(--background-color);
     color: var(--main-color);
-    h3 {
+    border: 2px solid var(--main-color);
+    &__title {
         color: var(--main-color);
         font-size: 18px;
+        font-variation-settings: "wght" var(--accent-font-weight);
+        padding: 4px 10px 6px 10px;
     }
-    img {
+    &__image {
         inline-size: 100%;
+        border-top: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+    }
+    &__text {
+        padding-top: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+        font-size: 18px;
+        line-height: 21px;
+        font-variation-settings: "wght" var(--main-font-weight);
+    }
+
+    &__button-container {
+        display: flex;
+        justify-content: flex-end;
+        padding: 25px;
+    }
+    &__icon-button {
+        background-color: var(--background-color);
+        border: none;
+        padding: 4px 1px;
+    }
+    &__like-button {
+        background-color: var(--background-color);
+        border: 2px solid var(--main-color);
+        font-family: var(--accent-font);
+        padding: 12px 37px;
+    }
+    .button__text {
+        color: var(--main-color);
+        font-size: 14px;
+        line-height: 90%;
     }
 }
