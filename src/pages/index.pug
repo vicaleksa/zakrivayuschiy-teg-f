@@ -71,25 +71,11 @@ block variables
 		]
 
 block content
-	header.header
-		h1.header__logo &lt;/HTML&gt;
-		h2.header__headline закрывающий тег
-		nav.theme-menu.header__theme-menu
-			ul.theme-menu__list
-				li.theme-menu__item
-						button.theme-menu__button(type='button' data-theme='dark') Темно
-				li.theme-menu__item
-						button.theme-menu__button(type='button' data-theme='auto' disabled) Авто
-				li.theme-menu__item
-						button.theme-menu__button(type='button' data-theme='light') Светло
+	include ../components/header/header.pug
 	main.card-section
 		include ../components/card/card.pug
 		if cardsData.length > 0
 			each card in cardsData
 				+card(card.title, card.image, card.paragraphs)
-	footer.footer
-		button.footer__save-button
-			svg.floppy-icon
-				use(href='/images/svg/floppy.svg#floppy' fill='currentColor')
-			span.button__text Сохранить на память
+	include ../components/footer/footer.pug
 	script(src='/scripts/like.js')
