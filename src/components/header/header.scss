@@ -37,10 +37,24 @@
         border: none;
         &:disabled, &:hover {
             opacity: 0.6;
+            animation-name: disabled-and-hover;
+            animation-duration: 0.3s;
+            animation-timing-function: ease;
+        }
+        &:disabled {
+            pointer-events: none;
         }
         &:disabled::before {
             content: '▶';
             margin-right: 6px;
+        }
+        @keyframes disabled-and-hover {
+            from {
+                opacity: 1.0;
+            }
+            to {
+                opacity: 0.6;
+            }
         }
     }
 }
