@@ -8,6 +8,31 @@
         font-variation-settings: "wght" var(--accent-font-weight);
         padding: 4px 10px 6px 10px;
     }
+    .image-container {
+        position: relative;
+    }
+    .label {
+        position: absolute;
+        top: 25px;
+        right: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
+        font-family: var(--accent-font);
+        font-size: 14px;
+        opacity: 0.5;
+        mix-blend-mode: hard-light;
+        text-shadow:
+            -1px 0 var(--stroke-color),
+            0 1px var(--stroke-color),
+            1px 0 var(--stroke-color),
+            0 -1px var(--stroke-color);
+        paint-order: stroke;
+    }
+    @supports((text-stroke: 1px var(--stroke-color)) or (-webkit-text-stroke: 1px var(--stroke-color))) {
+        .label {
+            -webkit-text-stroke: 1px var(--stroke-color);
+            text-stroke: 1px var(--stroke-color);
+            text-shadow: none;
+        }
+    }
     &__image {
         inline-size: 100%;
         border-top: 2px solid var(--main-color);
