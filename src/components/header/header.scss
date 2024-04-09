@@ -21,24 +21,26 @@
         padding-bottom: 25px;
         font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
     }
-    .theme-menu__list {
+}
+
+.theme-menu {
+    &__list {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 14px;
     }
-    .theme-menu__button {
+    &__button {
         text-transform: uppercase;
         font-size: 14px;
         background-color: var(--background-color);
         border: none;
-    }
-    .theme-menu__button:disabled {
-        color: var(--main-color);
-        opacity: 0.6;
-    }
-    .theme-menu__button:disabled::before {
-        content: '▶';
-        margin-right: 6px;
+        &:disabled, &:hover {
+            opacity: 0.6;
+        }
+        &:disabled::before {
+            content: '▶';
+            margin-right: 6px;
+        }
     }
 }
