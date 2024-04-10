@@ -35,12 +35,12 @@
         font-size: 14px;
         background-color: var(--background-color);
         border: none;
+        transition: opacity 0.3s ease;
         &:hover {
             cursor: pointer;
         }
         &:disabled, &:hover {
             opacity: 0.6;
-            animation: disabled-and-hover 0.3s ease;
         }
         &:disabled {
             pointer-events: none;
@@ -50,14 +50,6 @@
             position: absolute;
             left: -20px;
         }
-        @keyframes disabled-and-hover {
-            from {
-                opacity: 1.0;
-            }
-            to {
-                opacity: 0.6;
-            }
-        }
         &::after {
             content: "";
             display: block;
@@ -66,19 +58,15 @@
             background-color: currentColor;
             outline: none;
             transform-origin: left;
-            transform: scaleX(0)
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
         &:focus-visible::after {
-            animation: focus 0.3s ease;
+            transform: scaleX(1);
         }
         &:focus {
             outline: none;
             opacity: 0.6;
-        }
-        @keyframes focus {
-            to {
-                transform: scaleX(1);
-            }
         }
     }
 }
