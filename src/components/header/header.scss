@@ -27,7 +27,7 @@
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 14px;
+        gap: 7px;
     }
     &__button {
         position: relative;
@@ -48,7 +48,16 @@
         &:disabled::before {
             content: '▶';
             position: absolute;
-            left: -20px;
+            left: -14px;
+            animation: moving-triangle 0.5s ease-in-out infinite alternate;
+        }
+        @keyframes moving-triangle {
+            from {
+                left: -14px;
+            }
+            to {
+                left: -10px;
+            }
         }
         &::after {
             content: "";
