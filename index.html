@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
     <title>Закрывающий тег</title>
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
@@ -10,50 +11,46 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/animations.css" />
     <link rel="stylesheet" href="./styles/themes.css" />
-
-    <link rel="stylesheet" href="./styles-old/index.css" />
-    <link rel="stylesheet" href="./styles-old/bundle.css" />
-
     <script src="./scripts/set-theme.js"></script>
   </head>
   <body class="page">
     <header class="header">
       <h1 class="header__logo">
         &lt;/HTML&gt;
-        <h2 class="header__headline">закрывающий тег</h2>
-        <nav class="theme-menu header__theme-menu">
-          <ul class="theme-menu__list">
-            <li class="theme-menu__item">
-              <button
-                class="theme-menu__button"
-                type="button"
-                data-theme="dark"
-              >
-                Темно
-              </button>
-            </li>
-            <li class="theme-menu__item">
-              <button
-                class="theme-menu__button"
-                type="button"
-                data-theme="auto"
-                disabled
-              >
-                Авто
-              </button>
-            </li>
-            <li class="theme-menu__item">
-              <button
-                class="theme-menu__button"
-                type="button"
-                data-theme="light"
-              >
-                Светло
-              </button>
-            </li>
-          </ul>
-        </nav>
       </h1>
+      <h2 class="header__headline">закрывающий тег</h2>
+      <nav class="theme-menu header__theme-menu">
+        <ul class="theme-menu__list">
+          <li class="theme-menu__item">
+            <button
+              class="theme-menu__button"
+              type="button"
+              data-theme="dark"
+            >
+              Темно
+            </button>
+          </li>
+          <li class="theme-menu__item">
+            <button
+              class="theme-menu__button"
+              type="button"
+              data-theme="auto"
+              disabled
+            >
+              Авто
+            </button>
+          </li>
+          <li class="theme-menu__item">
+            <button
+              class="theme-menu__button"
+              type="button"
+              data-theme="light"
+            >
+              Светло
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main class="card-section">
       <article class="card">
@@ -529,8 +526,9 @@
           <use
             href="/images/svg/floppy.svg#floppy"
             fill="currentColor"
-          ></use></svg
-        ><span class="button__text">Сохранить на память</span>
+          ></use>
+        </svg>
+        <span class="button__text">Сохранить на память</span>
       </button>
     </footer>
     <dialog
@@ -549,13 +547,15 @@
           Вставьте дискету, чтобы продолжить
         </h2>
       </div>
-      <button
-        class="save-dialog__ok-button"
-        type="button"
-        onclick='window["dialog-id"].close()'
-      >
-        <span class="button__text">OK</span>
-      </button>
+      <form method="dialog">
+        <button
+          class="save-dialog__ok-button"
+          type="button"
+          onclick='window["dialog-id"].close()'
+        >
+          <span class="button__text">OK</span>
+        </button>
+      </form>
     </dialog>
     <script src="./scripts/like.js"></script>
   </body>
