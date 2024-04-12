@@ -10,6 +10,9 @@
     }
     .image-container {
         position: relative;
+        overflow: hidden;
+        border-top: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
     }
     .label {
         position: absolute;
@@ -35,8 +38,31 @@
     }
     &__image {
         inline-size: 100%;
-        border-top: 2px solid var(--main-color);
-        border-bottom: 2px solid var(--main-color);
+        display: block;
+        &-bright {
+            filter: brightness(120%);
+        }
+        &-blur {
+            filter: blur(10px);
+        }
+        &-gray {
+            filter: grayscale(0.8);
+        }
+        &-invert {
+            filter: invert(0.7);
+        }
+        &-sepia {
+            filter: sepia(80%);
+        }
+        &-hue {
+            filter: hue-rotate(-90deg);
+        }
+        &-saturate {
+            filter: saturate(158%);
+        }
+        &-multiply {
+            filter: invert(1) brightness(140%) saturate(80%) hue-rotate(90deg);
+        }
     }
     &__text {
         padding-top: 25px;

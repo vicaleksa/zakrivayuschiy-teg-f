@@ -1,8 +1,8 @@
-mixin card(title, imgUrl, labelText, paragraphs)
+mixin card(title, imgUrl, labelText, paragraphs, effect)
 	article.card
 		h3.card__title= title
 		.image-container
-			img.card__image(src=imgUrl, alt=title)
+			img(class='card__image card__image-'+effect, src=imgUrl, alt=title)
 			span.label= labelText
 		each paragraph in paragraphs
 			p.card__text= paragraph
