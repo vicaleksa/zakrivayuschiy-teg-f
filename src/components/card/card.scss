@@ -61,23 +61,90 @@
         border-width: 2px;
         border-color: transparent;
         border-style: solid;
+        transition: border-color 0.3s ease;
         &:focus {
             outline: none;
         }
         &:focus-visible {
             border-color: var(--main-color);
-            transition: border-color 0.3s ease;
         }
     }
-    .heart-icon {
+    .core {
+        fill: transparent;
+        transition: fill 0.3s 0s;
+    }
+    .card__icon-button:hover .core {
+        fill: var(--main-color);
+        transition: fill 0s 0.03s;
+    }
+    .card__icon-button:active .core {
+        fill: var(--icon-filling);
+        transition: fill 0s 0.03s;
+    }
+    .main-body {
+        fill: transparent;
+        transition: fill 0.3s 0.05s;
+    }
+    .card__icon-button:hover .main-body {
+        fill: var(--main-color);
+        transition: fill 0.3s 0s;
+    }
+    .card__icon-button:active .main-body {
+        fill: var(--icon-filling);
+        transition: fill 0.3s 0s;
+    }
+    .like-icon.is-liked .core {
+        fill: var(--icon-filling);
+        transition: fill 0.3s 0.03s;
+    }
+    .like-icon.is-liked .main-body {
+        fill: var(--icon-filling);
+        transition: fill 0.3s 0s;
+    }
+    .like-icon.is-liked .contour {
+        fill: var(--icon-filling);
+        transition: fill 0.3s 0.6s;
+    }
+    .like-icon.is-liked .heart {
+        animation: heart-scale 0.3s alternate-reverse ease-in 0.1s;
+        transform-origin: center;
+    }
+    @keyframes heart-scale {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.5);
+        }
+    }
+    .like-icon.is-liked .sparks {
+        animation: heart-sparks 0.3s alternate-reverse ease-in 0.3s;
+
+    }
+    @keyframes heart-sparks {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    .contour {
+        fill: var(--main-color);
+        transition: fill 0.1s;
+    }
+    .like-icon {
         display: block;
+        .sparks {
+            opacity: 0;
+        }
     }
     &__like-button {
         position: relative;
         background-color: var(--background-color);
         border: 2px solid var(--main-color);
         font-family: var(--accent-font);
-        padding: 11px 35px;
+        min-width: 118px;
         line-height: 13px;
         color: var(--main-color);
         font-size: 14px;
