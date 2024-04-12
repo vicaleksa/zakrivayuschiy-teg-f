@@ -1,0 +1,7 @@
+dialog.save-dialog(id='dialog-id' aria-label='Сохранить на дискету')
+	div.save-dialog__container
+		svg.save-dialog__floppy-icon
+			use(href='/images/svg/floppy.svg#floppy_39' fill='var(--main-color)')
+		h2.save-dialog__headline Вставьте дискету, чтобы продолжить
+	button.save-dialog__ok-button(type='button' onclick='window["dialog-id"].close()')
+		span.button__text OK

@@ -1,5 +1,6 @@
 footer.footer
-	button.footer__save-button
+	button.footer__save-button(type='button' onclick='window["dialog-id"].showModal();' aria-controls='dialog-id')
 		svg.floppy-icon
 			use(href='/images/svg/floppy.svg#floppy' fill='currentColor')
 		span.button__text Сохранить на память
+include ../dialog/dialog.pug
