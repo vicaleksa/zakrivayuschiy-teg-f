@@ -27,11 +27,11 @@ function pug() {
     .pipe(gulpPug({
       pretty: true,
     }))
-    // .pipe(plumber())
-    // .on('data', function (file) {
-    //   const buferFile = Buffer.from(htmlMinify.minify(file.contents.toString(), options))
-    //   return file.contents = buferFile
-    // })
+    .pipe(plumber())
+    .on('data', function (file) {
+      const buferFile = Buffer.from(htmlMinify.minify(file.contents.toString(), options))
+      return file.contents = buferFile
+    })
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({ stream: true }));
 }
@@ -46,7 +46,7 @@ function layoutsScss() {
   const plugins = [
     autoprefixer(),
     mediaquery(),
-    //cssnano()
+    cssnano()
   ];
   return gulp.src('src/layouts/**/*.scss')
     .pipe(sass())

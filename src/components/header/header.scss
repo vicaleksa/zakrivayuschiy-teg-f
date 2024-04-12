@@ -18,7 +18,7 @@
     }
     &__headline {
         text-transform: uppercase;
-        padding-bottom: 25px;
+        padding-bottom: 23px;
         font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
     }
 }
@@ -27,7 +27,7 @@
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 7px;
+        gap: 9px;
     }
     &__button {
         position: relative;
