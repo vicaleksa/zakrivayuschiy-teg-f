@@ -343,6 +343,7 @@
   line-height: 13px;
   color: var(--main-color);
   padding: 12px 17px;
+  text-transform: uppercase;
 }
 
 .save-dialog__ok-button .button__text {
