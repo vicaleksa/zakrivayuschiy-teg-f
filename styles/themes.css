@@ -6,8 +6,8 @@
   --stroke-color: #fff;
   --hover-text: #fff;
   --icon-filling: #f00;
-  --background-image: repeating-linear-gradient(#d3d3d3, transparent 2px),
-    repeating-linear-gradient(90deg, #d3d3d3, transparent 2px),
+  --background-image: repeating-linear-gradient(#d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
     linear-gradient(#e7e7e7 0.01%, #1a1a1a);
 }
 
@@ -19,9 +19,9 @@
   --stroke-color: #000;
   --hover-text: #00cc14;
   --icon-filling: #f00;
-  --background-image: repeating-linear-gradient(#000, transparent 2px),
-    repeating-linear-gradient(90deg, #000, transparent 2px),
-    linear-gradient(#007f0c, #004306);
+  --background-image: repeating-linear-gradient(#000, #000 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(90deg, #000, #000 2px, transparent 2px, transparent 4px),
+    linear-gradient(#007f0c 0.01%, #004306);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,8 +34,8 @@
     --stroke-color: #000;
     --hover-text: #00cc14;
     --icon-filling: #f00;
-    --background-image: repeating-linear-gradient(#000, transparent 2px),
-      repeating-linear-gradient(90deg, #000, transparent 2px),
-      linear-gradient(#007f0c, #004306);
+    --background-image: repeating-linear-gradient(#000, #000 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(90deg, #000, #000 2px, transparent 2px, transparent 4px),
+    linear-gradient(#007f0c 0.01%, #004306);
   }
 }

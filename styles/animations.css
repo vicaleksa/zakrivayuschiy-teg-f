@@ -76,14 +76,9 @@
   transition: fill 0.3s 0s;
 }
 
-.card .contour {
-    fill: var(--main-color);
-    transition: fill 0.1s;
-}
-
 .card .like-icon.is-liked .contour {
   fill: var(--icon-filling);
-  transition: fill 0.3s 0.6s;
+  transition: fill 0.3s 0.06s;
 }
 
 .card .like-icon.is-liked .heart {

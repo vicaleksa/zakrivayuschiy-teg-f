@@ -9,7 +9,7 @@
 }
 
 .header {
-  width: clamp(23.4375rem, 100vw, 43.75rem);
+  width: clamp(375px, 100%, 700px);
   background-color: var(--background-color);
   display: flex;
   margin: auto;
@@ -39,6 +39,7 @@
   display: flex;
   flex-direction: column;
   gap: 9px;
+  padding-left: 18px;
 }
 
 .theme-menu__button {
@@ -60,6 +61,7 @@
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
+  top: 0;
   left: -14px;
 }
 
@@ -90,14 +92,14 @@
   padding: 4px 10px 6px;
 }
 
-.card .image-container {
+.image-container {
   position: relative;
   overflow: hidden;
   border-top: 2px solid var(--main-color);
   border-bottom: 2px solid var(--main-color);
 }
 
-.card .label {
+.label {
   position: absolute;
   top: 25px;
   right: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
@@ -116,7 +118,7 @@
 @supports (text-stroke: 1px var(--stroke-color)) or
   (-webkit-text-stroke: 1px var(--stroke-color)) {
 
-  .card .label {
+  .label {
     -webkit-text-stroke: 1px var(--stroke-color);
     text-stroke: 1px var(--stroke-color);
     text-shadow: none;
@@ -136,7 +138,7 @@
 }
 
 .card__image-blur {
-  filter: blur(10px);
+  filter: blur(3px);
 }
 
 .card__image-gray {
@@ -197,11 +199,11 @@
   border-color: var(--main-color);
 }
 
-.card .like-icon {
+.like-icon {
   display: block;
 }
 
-.card .like-icon .sparks {
+.like-icon .sparks {
   opacity: 0;
 }
 
@@ -286,7 +288,7 @@
 }
 
 .footer .floppy-icon {
-  width: 29px;
+  width: 28px;
   height: 28px;
   color: var(--hover-text);
   mix-blend-mode: difference;
@@ -374,9 +376,8 @@
 }
 
 .card-section {
-  width: clamp(23.4375rem, 100vw, 43.75rem);
+  width: clamp(375px, 100%, 700px);
   margin: auto;
-  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -386,5 +387,10 @@
 
   .footer__save-button {
     flex-direction: row;
+  }
+
+  .footer .floppy-icon {
+    width: 21px;
+    height: 21px;
   }
 }
